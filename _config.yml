@@ -14,9 +14,9 @@ timezone: America/Chicago
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: AiSkout Your AI Companion # the main title
+title: AiSkout # the main title
 
-tagline: A AiSkout wiki site for Your AI companion # it will display as the subtitle
+tagline: Your AI companion # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A wiki AiSkout is a collection of technical writing and notes for your every day tasks.
@@ -38,10 +38,11 @@ social:
   email: aiskout.email+profile@aiskout.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/aiskout # change to your Twitter homepage
+    - https://x.com/aiskout # change to your Twitter homepage
     - https://github.com/aiskout # change to your GitHub homepage
-    - https://www.facebook.com/aiskout # change to your GitHub homepage
-    - https://www.linkedin.com/in/aiskout # change to your GitHub homepage
+    - https://www.facebook.com/aiskout # change to your Facebook homepage
+    - https://www.linkedin.com/in/aiskout # change to your Linkedin homepage
+    - https://discord.gg/wq6PAKzH # change to your Discord homepage
 
 # Site Verification Settings
 webmaster_verifications:
