@@ -38,11 +38,13 @@ social:
   email: aiskout.email+profile@aiskout.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
+    # - https://www.facebook.com/aiskout # change to your Facebook homepage
     - https://x.com/aiskout # change to your Twitter homepage
     - https://github.com/aiskout # change to your GitHub homepage
-    - https://www.facebook.com/aiskout # change to your Facebook homepage
     - https://www.linkedin.com/in/aiskout # change to your Linkedin homepage
     - https://discord.gg/wq6PAKzH # change to your Discord homepage
+    - https://gokollab.com/AiSkout # change to your gokollab homepage
+    - https://www.tiktok.com/@aiskout # change to your TikTok homepage
 
 # Site Verification Settings
 webmaster_verifications:
@@ -63,8 +65,8 @@ analytics:
   goatcounter:
     id: # fill in your GoatCounter ID
   umami:
-    id: # fill in your Umami ID
-    domain: # fill in your Umami domain
+    id: a9db4eee-5c5a-413f-9634-51a0b57f6ac8 # fill in your Umami ID
+    domain:aiskout.github.io # fill in your Umami domain
   matomo:
     id: # fill in your Matomo ID
     domain: # fill in your Matomo domain
