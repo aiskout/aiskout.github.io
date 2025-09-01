@@ -22,6 +22,26 @@ package-lock.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# Docker
+.dockerignore
+
 # Misc
 _sass/vendors
 assets/js/dist

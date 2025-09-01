@@ -1,0 +1,19 @@
+{% comment %}
+  Custom copyright notice with dynamic year calculation
+  This overrides the default Chirpy copyright behavior
+{% endcomment %}
+
+{% assign current_year = site.time | date: "%Y" %}
+{% assign start_year = site.copyright.start_year | default: 2024 %}
+{% assign holder = site.copyright.holder | default: site.social.name %}
+{% assign rights = site.copyright.rights_text | default: "All rights reserved" %}
+
+&copy;
+{% if current_year == start_year %}
+  {{ current_year }}
+{% else %}
+  {{ start_year }}-{{ current_year }}
+{% endif %}
+
+<a href="{{ site.social.links[0] | default: '/' }}">{{ holder }}</a>.
+{{ rights }}.
