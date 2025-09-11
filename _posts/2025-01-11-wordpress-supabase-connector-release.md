@@ -9,7 +9,7 @@ We're excited to announce the release of the **WordPress Supabase Connector** - 
 
 ## 🚀 What is WordPress Supabase Connector?
 
-The WordPress Supabase Connector is an open-source plugin that enables seamless integration between WordPress and Supabase, allowing you to leverage Supabase's powerful backend services directly within your WordPress site.
+The WordPress Supabase Connector is a plugin that enables seamless integration between WordPress and Supabase, allowing you to leverage Supabase's powerful backend services directly within your WordPress site.
 
 ## ✨ Key Features
 
@@ -173,15 +173,6 @@ supabase_subscribe('messages', function($payload) {
 - Real-time visitor tracking
 - Performance metrics storage
 
-## 🔧 Integration with AISKOUT Platform
-
-The WordPress Supabase Connector works seamlessly with the [AISKOUT Platform](https://github.com/aiskout-org/aiskout-platform):
-
-- **Shared Database**: Use the same Supabase instance across n8n workflows and WordPress
-- **AI Workflows**: Trigger n8n workflows from WordPress events
-- **Content Generation**: AI-generated content flows directly to WordPress
-- **User Management**: Unified authentication across all platform services
-
 ## 📋 Requirements
 
 - WordPress 5.0 or higher
@@ -192,11 +183,6 @@ The WordPress Supabase Connector works seamlessly with the [AISKOUT Platform](ht
 ## 🤝 Commercial Product
 
 The WordPress Supabase Connector is a **commercial plugin** developed and maintained by AISKOUT.
-
-### Repository
-- **GitHub**: [aiskout-org/wp-supabase-connector](https://github.com/aiskout-org/wp-supabase-connector)
-- **Issues**: Report bugs or request features
-- **Status**: Commercial product - contributions not currently accepted
 
 ### Support & Updates
 - **Commercial License**: Includes 1 year of updates and support
@@ -227,8 +213,8 @@ We're continuously improving the connector with upcoming features:
 
 Need help getting started?
 
-- **Documentation**: [GitHub Repository](https://github.com/aiskout-org/wp-supabase-connector)
-- **Issues**: [Report Problems](https://github.com/aiskout-org/wp-supabase-connector/issues)
+- **Documentation**: [GitHub Repository](https://github.com/aiskout/wp-supabase-connector)
+- **Issues**: [Report Problems](https://github.com/aiskout/wp-supabase-connector/issues)
 - **Community**: Join discussions in our GitHub repository
 
 ---
