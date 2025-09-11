@@ -38,26 +38,86 @@ The WordPress Supabase Connector is an open-source plugin that enables seamless 
 - Secure API key management
 - Data validation and sanitization
 
-## 📦 Installation
+## 📦 Download Plugin
 
-### Method 1: Download from GitHub Releases
+<div id="download-form" style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+  <h3>Get WordPress Supabase Connector</h3>
+  <p>Enter your email and domain to download the plugin with a commercial license.</p>
+  
+  <form id="plugin-download-form">
+    <div style="margin-bottom: 1rem;">
+      <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email Address:</label>
+      <input type="email" id="email" name="email" required 
+             style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="domain" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Domain (e.g., example.com):</label>
+      <input type="text" id="domain" name="domain" required 
+             placeholder="yourdomain.com"
+             style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem;">
+    </div>
+    
+    <button type="submit" id="download-btn"
+            style="background: #007cba; color: white; padding: 0.75rem 2rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; width: 100%;">
+      Get Plugin License - $10
+    </button>
+  </form>
+  
+  <div id="form-message" style="margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none;"></div>
+</div>
+
+<script>
+document.getElementById('plugin-download-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  const domain = document.getElementById('domain').value;
+  const btn = document.getElementById('download-btn');
+  const message = document.getElementById('form-message');
+  
+  btn.disabled = true;
+  btn.textContent = 'Processing...';
+  
+  try {
+    // Step 1: Register user
+    const registerResponse = await fetch('https://wp-connector.aiskout.workers.dev/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, domain })
+    });
+    
+    const registerData = await registerResponse.json();
+    
+    if (registerData.status === 'verification_sent') {
+      message.style.display = 'block';
+      message.style.background = '#d4edda';
+      message.style.color = '#155724';
+      message.innerHTML = '✅ Verification email sent! Please check your inbox and click the verification link.';
+    } else {
+      throw new Error('Registration failed');
+    }
+    
+  } catch (error) {
+    message.style.display = 'block';
+    message.style.background = '#f8d7da';
+    message.style.color = '#721c24';
+    message.innerHTML = '❌ Error: ' + error.message;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Get Plugin License - $10';
+  }
+});
+</script>
+
+### Alternative: Free Download
+
+For open-source projects and personal use:
 
 1. Visit [GitHub Releases](https://github.com/aiskout-org/wp-supabase-connector/releases)
 2. Download `wp-supabase-connector.zip`
 3. Upload via WordPress Admin → Plugins → Add New → Upload Plugin
 4. Activate the plugin
-
-### Method 2: Manual Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/aiskout-org/wp-supabase-connector.git
-
-# Copy to WordPress plugins directory
-cp -r wp-supabase-connector /path/to/wordpress/wp-content/plugins/
-
-# Activate via WordPress admin
-```
 
 ## ⚙️ Configuration
 
@@ -162,7 +222,10 @@ composer test
 
 ## 📄 License
 
-The WordPress Supabase Connector is licensed under the Apache License 2.0, making it free for both personal and commercial use.
+The WordPress Supabase Connector is available under dual licensing:
+
+- **Open Source**: Apache License 2.0 for personal and open-source projects
+- **Commercial**: Commercial license for business use (includes support and updates)
 
 ## 🚀 What's Next?
 
@@ -184,4 +247,4 @@ Need help getting started?
 
 ---
 
-*Ready to supercharge your WordPress site with Supabase? [Download the connector today!](https://github.com/aiskout-org/wp-supabase-connector/releases)*
+*Ready to supercharge your WordPress site with Supabase? Use the form above to get your commercial license or [download the open-source version!](https://github.com/aiskout-org/wp-supabase-connector/releases)*
