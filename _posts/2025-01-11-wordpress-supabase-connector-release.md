@@ -81,7 +81,7 @@ document.getElementById('plugin-download-form').addEventListener('submit', async
   
   try {
     // Step 1: Register user
-    const registerResponse = await fetch('https://wp-connector.aiskout.workers.dev/register', {
+    const registerResponse = await fetch('https://license-api.aiskout-email-cloudflare.workers.dev/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, domain })
