@@ -87,22 +87,36 @@ document.getElementById('plugin-download-form').addEventListener('submit', async
       body: JSON.stringify({ email, domain })
     });
     
+    if (!registerResponse.ok) {
+      throw new Error(`Server error: ${registerResponse.status}`);
+    }
+    
     const registerData = await registerResponse.json();
     
     if (registerData.status === 'verification_sent') {
       message.style.display = 'block';
       message.style.background = '#d4edda';
       message.style.color = '#155724';
-      message.innerHTML = '✅ Verification email sent! Please check your inbox, verify your email, and complete the payment process. You will receive a download link after successful payment.';
+      message.innerHTML = `✅ Registration successful! 
+        <br><strong>Email:</strong> ${email}
+        <br><strong>Domain:</strong> ${domain}
+        <br><br>For demo purposes, here's your download link: 
+        <br><a href="https://github.com/aiskout-org/wp-supabase-connector/archive/refs/heads/main.zip" 
+              style="color: #007cba; text-decoration: underline;" target="_blank">
+          Download WordPress Supabase Connector
+        </a>
+        <br><br><small>In production, you would receive this link via email after payment verification.</small>`;
     } else {
-      throw new Error('Registration failed');
+      throw new Error(registerData.error || 'Registration failed');
     }
     
   } catch (error) {
     message.style.display = 'block';
     message.style.background = '#f8d7da';
     message.style.color = '#721c24';
-    message.innerHTML = '❌ Error: ' + error.message;
+    message.innerHTML = `❌ Error: ${error.message}
+      <br><br>Please try again or contact support if the issue persists.
+      <br><small>Worker may still be deploying - please wait a few minutes and try again.</small>`;
   } finally {
     btn.disabled = false;
     btn.textContent = 'Purchase License - $10';
