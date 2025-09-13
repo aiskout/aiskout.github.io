@@ -4,11 +4,13 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     
-    // CORS headers
+    // CORS and security headers
     const corsHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Permissions-Policy': 'interest-cohort=(), browsing-topics=()',
+      'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline'",
     };
 
     if (request.method === 'OPTIONS') {
