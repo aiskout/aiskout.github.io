@@ -100,7 +100,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://avatars.githubusercontent.com/u/aiskout
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -123,8 +123,8 @@ comments:
   giscus:
     repo: aiskout/aiskout.github.io
     repo_id: R_kgDONgX4Zw
-    category: Show and tell
-    category_id: DIC_kwDONgX4Z84ClZ9L
+    category: General
+    category_id: DIC_kwDONgX4Z84ClZ9M
     mapping: pathname # optional, default to 'pathname'
     strict: 0 # optional, default to '0'
     input_position: bottom # optional, default to 'bottom'
