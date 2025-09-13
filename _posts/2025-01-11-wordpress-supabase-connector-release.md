@@ -40,7 +40,75 @@ The WordPress Supabase Connector is a plugin that enables seamless integration b
 
 ## 📦 Download Plugin
 
-The WordPress Supabase Connector is available for purchase. Use the license form in the sidebar to get your copy.
+<div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin: 2rem 0;">
+  <h3>Get WordPress Supabase Connector License</h3>
+  <p>Enter your email and domain to purchase the commercial license ($10).</p>
+  
+  <form id="license-form">
+    <div style="margin-bottom: 1rem;">
+      <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email:</label>
+      <input type="email" id="email" required 
+             style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+    </div>
+    
+    <div style="margin-bottom: 1rem;">
+      <label for="domain" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Domain:</label>
+      <input type="text" id="domain" placeholder="yourdomain.com" required 
+             style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px;">
+    </div>
+    
+    <button type="submit" id="license-btn"
+            style="width: 100%; background: #007cba; color: white; padding: 1rem; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer;">
+      Purchase License - $10
+    </button>
+  </form>
+  
+  <div id="license-message" style="margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none;"></div>
+</div>
+
+<script>
+document.getElementById('license-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  const domain = document.getElementById('domain').value;
+  const btn = document.getElementById('license-btn');
+  const message = document.getElementById('license-message');
+  
+  btn.disabled = true;
+  btn.textContent = 'Processing...';
+  
+  try {
+    const response = await fetch('https://license-api.aiskout-email-cloudflare.workers.dev/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, domain })
+    });
+    
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
+    
+    const data = await response.json();
+    
+    if (data.status === 'verification_sent') {
+      message.style.display = 'block';
+      message.style.background = '#d4edda';
+      message.style.color = '#155724';
+      message.innerHTML = '✅ Registration successful! Check your email for verification link.';
+    } else {
+      throw new Error(data.error || 'Registration failed');
+    }
+    
+  } catch (error) {
+    message.style.display = 'block';
+    message.style.background = '#f8d7da';
+    message.style.color = '#721c24';
+    message.innerHTML = `❌ ${error.message}`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Purchase License - $10';
+  }
+});
+</script>
 
 ## ⚙️ Configuration
 
