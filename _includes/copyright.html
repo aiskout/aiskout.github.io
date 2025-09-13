@@ -1,12 +1,4 @@
-<!-- Globe Widget -->
-<div style="margin-bottom: 2rem; padding: 1rem; background: #1a1a1a; border-radius: 8px;">
-  <h4 style="color: #fff; margin-bottom: 1rem; font-size: 0.9rem;">Interactive Globe</h4>
-  <div id="sidebar-globe" style="width: 100%; height: 150px; background: #000; border-radius: 4px;">
-    <canvas id="sidebar-globe-canvas" style="width: 100%; height: 100%;"></canvas>
-  </div>
-</div>
-
-<!-- Download Form -->
+<!-- License Form -->
 <div style="margin-bottom: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
   <h4 style="margin-bottom: 1rem; font-size: 0.9rem;">Get Plugin License</h4>
   <form id="license-form">
@@ -63,41 +55,6 @@ document.getElementById('license-form').addEventListener('submit', async functio
     btn.disabled = false;
     btn.textContent = 'Purchase License - $10';
   }
-});
-</script>
-
-<script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const container = document.getElementById('sidebar-globe');
-  const canvas = document.getElementById('sidebar-globe-canvas');
-  
-  if (!container || !canvas || typeof THREE === 'undefined') return;
-  
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-  const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-  
-  renderer.setSize(150, 150);
-  renderer.setClearColor(0x000011);
-  
-  const geometry = new THREE.SphereGeometry(1.5, 16, 16);
-  const material = new THREE.MeshBasicMaterial({ 
-    color: 0x4444ff,
-    wireframe: true 
-  });
-  const globe = new THREE.Mesh(geometry, material);
-  scene.add(globe);
-  
-  camera.position.z = 4;
-  
-  function animate() {
-    requestAnimationFrame(animate);
-    globe.rotation.y += 0.02;
-    renderer.render(scene, camera);
-  }
-  
-  animate();
 });
 </script>
 

@@ -40,7 +40,7 @@ The WordPress Supabase Connector is a plugin that enables seamless integration b
 
 ## 📦 Download Plugin
 
-The WordPress Supabase Connector is available for download. Use the download button in the sidebar to get the latest version.
+The WordPress Supabase Connector is available for purchase. Use the license form in the sidebar to get your copy.
 
 ## ⚙️ Configuration
 
