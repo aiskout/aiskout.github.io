@@ -145,7 +145,7 @@ export default {
                 <p><strong>Domain:</strong> ${domain}</p>
                 <p><strong>License Key:</strong></p>
                 <code style="background: #f4f4f4; padding: 8px; display: block; word-break: break-all;">${license}</code>
-                <p><strong>Download:</strong> <a href="https://github.com/aiskout-org/wp-supabase-connector/releases">Get Plugin</a></p>
+                <p><strong>Download:</strong> <a href="https://wp-supabase-connector.aiskout.workers.dev/download">Get Plugin</a></p>
                 <h3>Installation:</h3>
                 <ol>
                   <li>Download the plugin from the link above</li>
@@ -164,6 +164,11 @@ export default {
         }
 
         return new Response("ok");
+      }
+
+      if (url.pathname === "/download" && request.method === "GET") {
+        // Redirect to the latest release
+        return Response.redirect("https://github.com/aiskout/wp-supabase-connector/releases/latest/download/wp-supabase-connector.zip", 302);
       }
 
       return new Response("Not Found", { status: 404, headers: corsHeaders });
