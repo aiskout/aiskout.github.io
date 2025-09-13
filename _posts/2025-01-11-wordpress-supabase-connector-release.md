@@ -82,10 +82,17 @@ document.getElementById('license-form').addEventListener('submit', async functio
     const response = await fetch('https://license-api.aiskout-email-cloudflare.workers.dev/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, domain })
+      body: JSON.stringify({ 
+        email, 
+        domain,
+        turnstile_token: null // No CAPTCHA in embedded form
+      })
     });
     
-    if (!response.ok) throw new Error(`Error: ${response.status}`);
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      throw new Error(errorData.error || `HTTP ${response.status}`);
+    }
     
     const data = await response.json();
     
