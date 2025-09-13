@@ -6,14 +6,65 @@
   </div>
 </div>
 
-<!-- Download Button -->
-<div style="margin-bottom: 2rem;">
-  <a href="https://license-api.aiskout-email-cloudflare.workers.dev/download" 
-     target="_blank"
-     style="display: block; background: #007cba; color: white; padding: 0.8rem; text-align: center; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">
-    📦 Download Plugin
-  </a>
+<!-- Download Form -->
+<div style="margin-bottom: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
+  <h4 style="margin-bottom: 1rem; font-size: 0.9rem;">Get Plugin License</h4>
+  <form id="license-form">
+    <input type="email" id="email" placeholder="Email" required 
+           style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+    <input type="text" id="domain" placeholder="yourdomain.com" required 
+           style="width: 100%; padding: 0.5rem; margin-bottom: 0.5rem; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem;">
+    <button type="submit" id="license-btn"
+            style="width: 100%; background: #007cba; color: white; padding: 0.6rem; border: none; border-radius: 4px; font-size: 0.8rem; cursor: pointer;">
+      Purchase License - $10
+    </button>
+  </form>
+  <div id="license-message" style="margin-top: 0.5rem; padding: 0.5rem; border-radius: 4px; display: none; font-size: 0.8rem;"></div>
 </div>
+
+<script>
+document.getElementById('license-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const email = document.getElementById('email').value;
+  const domain = document.getElementById('domain').value;
+  const btn = document.getElementById('license-btn');
+  const message = document.getElementById('license-message');
+  
+  btn.disabled = true;
+  btn.textContent = 'Processing...';
+  
+  try {
+    const response = await fetch('https://license-api.aiskout-email-cloudflare.workers.dev/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, domain })
+    });
+    
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
+    
+    const data = await response.json();
+    
+    if (data.status === 'verification_sent') {
+      message.style.display = 'block';
+      message.style.background = '#d4edda';
+      message.style.color = '#155724';
+      message.innerHTML = '✅ Check your email for verification link';
+    } else {
+      throw new Error(data.error || 'Registration failed');
+    }
+    
+  } catch (error) {
+    message.style.display = 'block';
+    message.style.background = '#f8d7da';
+    message.style.color = '#721c24';
+    message.innerHTML = `❌ ${error.message}`;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Purchase License - $10';
+  }
+});
+</script>
 
 <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
 <script>
