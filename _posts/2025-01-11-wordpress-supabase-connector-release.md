@@ -159,3 +159,4 @@ Need help getting started?
 ---
 
 *Ready to supercharge your WordPress site with Supabase? Use the form above to purchase your commercial license and receive your download link!*
+<!-- GitHub Pages rebuild trigger -->
