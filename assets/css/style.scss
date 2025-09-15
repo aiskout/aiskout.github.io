@@ -1,0 +1,72 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+/* AISKOUT Brand Colors - Force Override */
+:root {
+  --link-color: #F38020 !important;
+  --link-underline-color: #F38020 !important;
+  --btn-primary-bg: #F38020 !important;
+  --btn-primary-border-color: #F38020 !important;
+  --btn-primary-hover-bg: #E54C19 !important;
+  --btn-primary-hover-border-color: #E54C19 !important;
+  --accent-color: #F38020 !important;
+  --selection-color: #F38020 !important;
+  --sidebar-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  --toc-highlight: #F38020 !important;
+  --tag-hover: #F38020 !important;
+  --input-focus-border-color: #F38020 !important;
+  --checkbox-checked-color: #F38020 !important;
+}
+
+/* Force sidebar gradient */
+#sidebar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Force link colors */
+a {
+  color: #F38020 !important;
+}
+
+a:hover {
+  color: #E54C19 !important;
+}
+
+/* Force button colors */
+.btn-primary {
+  background-color: #F38020 !important;
+  border-color: #F38020 !important;
+}
+
+.btn-primary:hover {
+  background-color: #E54C19 !important;
+  border-color: #E54C19 !important;
+}
+
+/* Purchase button styling */
+.purchase-btn {
+  background: linear-gradient(135deg, #F38020 0%, #E54C19 100%) !important;
+  color: white !important;
+  padding: 1rem 2rem !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  display: inline-block !important;
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+  box-shadow: 0 4px 15px rgba(243, 128, 32, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.purchase-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(243, 128, 32, 0.4) !important;
+  color: white !important;
+}
+
+/* Force selection color */
+::selection {
+  background-color: #F38020 !important;
+  color: white !important;
+}
