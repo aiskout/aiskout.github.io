@@ -41,7 +41,7 @@ The WordPress Supabase Connector is a plugin that enables seamless integration b
 ## 📦 Download Plugin
 
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="https://license-api.aiskout-email-cloudflare.workers.dev/" 
+  <a href="https://license.aiskout.workers.dev/" 
      target="_blank"
      style="display: inline-block; background: #007cba; color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-size: 1.2rem; font-weight: bold;">
     🛒 Purchase License - $10
@@ -152,8 +152,8 @@ We're continuously improving the connector with upcoming features:
 
 Need help getting started?
 
-- **Documentation**: [GitHub Repository](https://github.com/aiskout/wp-supabase-connector)
-- **Issues**: [Report Problems](https://github.com/aiskout/wp-supabase-connector/issues)
+- **Documentation**: [GitHub Repository](https://github.com/aiskout-org/wp-supabase-connector-plugin)
+- **Issues**: [Report Problems](https://github.com/aiskout-org/wp-supabase-connector-plugin/issues)
 - **Community**: Join discussions in our GitHub repository
 
 ---
