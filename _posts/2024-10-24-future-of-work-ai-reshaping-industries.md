@@ -3,7 +3,7 @@ title: "The Future of Work: How AI is Reshaping Industries"
 date: 2024-10-24 10:00:00 +0000
 categories: [AI, Future of Work, Industry Transformation]
 tags: [artificial intelligence, automation, workplace, digital transformation]
-author: jane_doe
+author: aiskout
 image:
   path: https://images.unsplash.com/photo-1678496460048-834d93427848?q=80&w=2070&auto=format&fit=crop
   alt: AI and robotics transforming the workplace

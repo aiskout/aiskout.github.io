@@ -3,7 +3,7 @@ title: "5 Repetitive Tasks You Can Automate in Under an Hour"
 date: 2024-10-18 14:30:00 +0000
 categories: [Automation, Productivity, Quick Wins]
 tags: [task automation, productivity, efficiency, business processes]
-author: john_smith
+author: aiskout
 image:
   path: https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop
   alt: Person working with automated systems and productivity tools

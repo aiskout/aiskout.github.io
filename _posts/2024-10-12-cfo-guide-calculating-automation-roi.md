@@ -3,7 +3,7 @@ title: "A CFO's Guide to Calculating Automation ROI"
 date: 2024-10-12 09:00:00 +0000
 categories: [Finance, ROI, Business Strategy]
 tags: [ROI calculation, financial analysis, automation investment, business metrics]
-author: emily_white
+author: aiskout
 image:
   path: https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=2070&auto=format&fit=crop
   alt: Financial charts and ROI calculations on a desk
